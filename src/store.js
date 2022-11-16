@@ -8,4 +8,13 @@ export const store = reactive({
     itemList: [],
     loading: false,
     errormessage: '',
+    computed: {
+        apiTv() {
+            return store.apiURL + store.apiEndpointTv + store.apiKEY
+        },
+        apiFilm() {
+            return store.apiURL + store.apiEndpointFilm + store.apiKEY
+        },
+
+    },
 });
