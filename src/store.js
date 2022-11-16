@@ -8,5 +8,5 @@ export const store = reactive({
     itemList: [],
     loading: false,
     errormessage: '',
-
+    path: 'https://image.tmdb.org/t/p/w300',
 });

@@ -1,13 +1,20 @@
 <template>
-    <div class="card">
-        <!-- <img class="img-fluid" src="" :alt="(store.name || store.title)">
-        <div class="card">{{ store.name || store.title }}</div> -->
-    </div>
+        <div class="card item">
+            <!-- <img class="img-fluid" :src="item." :alt="(item.name || item.title)">
+            <div>{{ item.name || item.title }}</div> -->
+        </div>
 </template>
 
 <script>
     export default {
-        name: 'CardComponent'
+        name: 'CardComponent',
+        data(){
+            return{
+                props: {
+                    item: Object
+                }
+            }
+        }
         
     }
 </script>
