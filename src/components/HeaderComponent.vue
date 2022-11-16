@@ -2,7 +2,7 @@
     <header>
         <div class="container d-flex justify-content-between">
             <h1>Boolflix</h1>
-            <SearchComponent/>
+            <SearchComponent @filteritem="getItem"/>
         </div>
     </header>
 </template>

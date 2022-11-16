@@ -53,7 +53,28 @@ import CardComponent from "./CardComponent.vue";
     methods: {
         getItem() {
             //     store.errormessage = '';
-                store.loading = true;
+            let options = null
+            if (store.name && store.title) {
+                options = {
+                    params: {
+                        name: store.name,
+                        title: store.search.title
+                    }
+                }
+            } else if (store.name) {
+                options = {
+                    params: {
+                        name: store.name
+                    }
+                }
+            } else if (store.title) {
+                options = {
+                    params: {
+                        title: store.title
+                    }
+                }
+            }
+            store.loading = true;
             axios.get(this.apiTv).then((res) => {
                 console.log(res.data.results);
                 store.itemListTv = res.data.results;

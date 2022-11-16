@@ -10,9 +10,6 @@ export const store = reactive({
     loading: false,
     errormessage: '',
     path: 'https://image.tmdb.org/t/p/w300',
-    methods: {
-        searchItem() {
-            this.$emit('filteritem');
-        },
-    }
+    name: '',
+    title: '',
 });
