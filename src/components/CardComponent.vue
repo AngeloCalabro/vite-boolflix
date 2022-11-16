@@ -1,7 +1,7 @@
 <template>
-        <div class="card item">
-            <!-- <img class="img-fluid" :src="item." :alt="(item.name || item.title)">
-            <div>{{ item.name || item.title }}</div> -->
+        <div class="item card">
+            <img class="w-100" src="" :alt="item.name">
+            <div>{{ item.name }}</div>
         </div>
 </template>
 
