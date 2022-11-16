@@ -2,12 +2,15 @@
     <main>
         <section class="container">
         <h1>Serie tv popolari</h1>
-            <div class="d-flex my-overflow">
+        <div class="text-center fw-bold" v-if="store.loading">
+            Loading...
+        </div>
+            <div class="d-flex my-overflow" v-if="!store.loading">
                 <div v-for="(item, index) in store.itemListTv" :key="index">
                     <div class="card my-card text-center">
                         <img class="w-100" :src="(store.path + item.poster_path)" :alt="( item.name || item.title )">
                         <div class="fw-bold">{{item.name || item.title}}</div>
-                        <div>{{ item.original_name || item.title}}</div>
+                        <div>{{ item.original_name || item.original_title }}</div>
                         <div>{{ item.original_language }}</div>
                         <div>Voto: {{ item.vote_average }}</div>
                     </div>
@@ -17,12 +20,15 @@
 
         <section class="container">
         <h1>Film Popolari</h1>
-            <div class="d-flex my-overflow">
+        <div class="text-center fw-bold" v-if="store.loading">
+            Loading...
+        </div>
+            <div class="d-flex my-overflow" v-if="!store.loading">
                 <div v-for="(item, index) in store.itemListFilm" :key="index" >
                     <div class="card my-card text-center">
                         <img class="w-100" :src="(store.path + item.poster_path)" :alt="( item.name || item.title )">
                         <div class="fw-bold">{{item.name || item.title}}</div>
-                        <div>{{ item.original_name || item.title}}</div>
+                        <div>{{ item.original_name || item.original_title }}</div>
                         <div>{{ item.original_language }}</div>
                         <div>Voto: {{ item.vote_average }}</div>
                     </div>
@@ -47,15 +53,14 @@ import CardComponent from "./CardComponent.vue";
     methods: {
         getItem() {
             //     store.errormessage = '';
-            //     let options = null;
-            //     store.loading = true;
+                store.loading = true;
             axios.get(this.apiTv).then((res) => {
                 console.log(res.data.results);
                 store.itemListTv = res.data.results;
                 // store.loading = false;
             }).catch((error) => {
                 //         store.itemList.length = 0;
-                //         store.loading = false;
+                        store.loading = false;
                 //         store.errormessage = error.message
                 console.log(error.message);
                 //         // console.log(error.response.status);
@@ -63,10 +68,10 @@ import CardComponent from "./CardComponent.vue";
             axios.get(this.apiFilm).then((res) => {
                 console.log(res.data.results);
                 store.itemListFilm = res.data.results;
-                // store.loading = false;
+                store.loading = false;
             }).catch((error) => {
                     //         store.itemList.length = 0;
-                    //         store.loading = false;
+                            store.loading = false;
                     //         store.errormessage = error.message
                     console.log(error.message);
                     //         // console.log(error.response.status);

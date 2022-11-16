@@ -1,8 +1,8 @@
 <template>
-        <div class="item card">
+        <!-- <div class="item card">
             <img class="w-100" src="" :alt="item.name">
             <div>{{ item.name }}</div>
-        </div>
+        </div> -->
 </template>
 
 <script>
