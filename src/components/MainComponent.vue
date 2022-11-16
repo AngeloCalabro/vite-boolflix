@@ -78,9 +78,9 @@ import CardComponent from "./CardComponent.vue";
             axios.get(this.apiTv).then((res) => {
                 console.log(res.data.results);
                 store.itemListTv = res.data.results;
-                // store.loading = false;
+                store.loading = false;
             }).catch((error) => {
-                //         store.itemList.length = 0;
+                        store.itemListTv.length = 0;
                         store.loading = false;
                 //         store.errormessage = error.message
                 console.log(error.message);
@@ -91,7 +91,7 @@ import CardComponent from "./CardComponent.vue";
                 store.itemListFilm = res.data.results;
                 store.loading = false;
             }).catch((error) => {
-                    //         store.itemList.length = 0;
+                            store.itemListFilm.length = 0;
                             store.loading = false;
                     //         store.errormessage = error.message
                     console.log(error.message);

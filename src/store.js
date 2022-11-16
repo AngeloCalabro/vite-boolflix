@@ -12,4 +12,57 @@ export const store = reactive({
     path: 'https://image.tmdb.org/t/p/w300',
     name: '',
     title: '',
+
+    // methods: {
+    //     getItem() {
+    //         //     store.errormessage = '';
+    //         let options = null
+    //         if (this.name && this.title) {
+    //             options = {
+    //                 params: {
+    //                     name: this.name,
+    //                     title: this.title
+    //                 }
+    //             }
+    //         } else if (this.name) {
+    //             options = {
+    //                 params: {
+    //                     name: this.name
+    //                 }
+    //             }
+    //         } else if (this.title) {
+    //             options = {
+    //                 params: {
+    //                     title: this.title
+    //                 }
+    //             }
+    //         }
+    //         this.loading = true;
+    //         axios.get(this.apiTv).then((res) => {
+    //             console.log(res.data.results);
+    //             this.itemListTv = res.data.results;
+    //             // this.loading = false;
+    //         }).catch((error) => {
+    //             //         this.itemList.length = 0;
+    //             this.loading = false;
+    //             //         this.errormessage = error.message
+    //             console.log(error.message);
+    //             //         // console.log(error.response.status);
+    //         });
+    //         axios.get(this.apiFilm).then((res) => {
+    //             console.log(res.data.results);
+    //             this.itemListFilm = res.data.results;
+    //             this.loading = false;
+    //         }).catch((error) => {
+    //             //         this.itemList.length = 0;
+    //             this.loading = false;
+    //             //         this.errormessage = error.message
+    //             console.log(error.message);
+    //             //         // console.log(error.response.status);
+    //         });
+    //     }
+    // },
+    // created() {
+    //     this.getItem();
+    // },
 });
