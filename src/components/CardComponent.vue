@@ -3,8 +3,7 @@
         <div class="flip-card-inner">
             <div class="flip-card-front">
                     <div class="img-box text-center">
-                        <img class="w-100 rounded-1" :src="item.poster_path ? imgBasePath + item.poster_path : 'https://via.placeholder.com/330x500.png'"
-                            :alt="item.title">
+                        <img class="w-100 rounded-1" :src="item.poster_path ? imgBasePath + item.poster_path : 'https://via.placeholder.com/330x500.png?text=Poster+Unknow'" :alt="item.title">
                         <span class="fw-bold title">{{ item.original_title || item.original_name }}</span>
                     </div>
             </div>
@@ -14,13 +13,14 @@
                     <span v-for="n in 5" class="fa-star" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></span>
                 </div>
                 <div class="flag" v-if="availableFlag.includes(item.original_language)">
-                    <img :src="'../../public/images/' + availableFlag + '.png'" :alt="item.original_language">
+                    <img :src="'/images/' + item.original_language + '.svg'" :alt="item.original_language">
                 </div>
                 <div v-else>
                     <em>Country:</em> <b class="text-uppercase">{{ item.original_language }}</b>
                 </div>
-                <p class="p-overview">
-                    {{ item.overview }}
+                <p class="p-overview py-1">
+                <em>Trama:</em><br>
+                    {{ item.overview || 'Unknow'}}
                 </p>
             </div>
         </div>
