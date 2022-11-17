@@ -18,6 +18,7 @@ export default {
         searchItem() {
             console.log(this.text);
             store.params.query = this.text;
+            this.text = '';
         }
     }
 

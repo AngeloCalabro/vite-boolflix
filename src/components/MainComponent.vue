@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <h2>{{ title }}</h2>
+        <h2 v-show="store.movie && store.tv ? title : ''">{{ title }}</h2>
         <div v-if="store.loading[mediaType]">
             Loading...
         </div>
