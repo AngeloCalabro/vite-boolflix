@@ -1,6 +1,7 @@
 <template>
     <section class="container-fluid">
-        <h2 v-show="store.params.query ? title : ''">{{ title }}</h2>
+        <h2 v-if="(mediaType == 'movie' && store.movie.length > 0) || (store.tv.length > 0 && mediaType=='tv')">{{ title }}</h2>
+        <h2 v-if="mediaType == 'popularMovie' || mediaType == 'popularTv'">{{ title }}</h2>
         <div v-if="store.loading[mediaType]">
             Loading...
         </div>

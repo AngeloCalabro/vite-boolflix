@@ -9,9 +9,9 @@
             <span v-for="n in 5" class="fa-star" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></span>
         </div>
         <div class="flag" v-if="availableFlag.includes(item.original_language)">
-            <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language">
+            <img :src="'./images/' + item.original_language + '.png'" :alt="item.original_language">
         </div>
-        <div v-else><em>Country:</em> {{ item.original_language }}</div>
+        <div v-else><em>Country:</em> <b class="text-uppercase">{{ item.original_language }}</b></div>
     </div>
 </template>
 
