@@ -1,7 +1,7 @@
 <template>
     <form class="d-flex align-items-center" @submit.prevent="searchItem">
-        <input class="form-control" type="text" placeholder="Search..." v-model.trim="text">
-        <button type="submit" class="btn btn-danger">Search</button>
+        <input class="form-control mx-1" type="text" placeholder="Search..." v-model.trim="text">
+        <button type="submit" class="btn btn-danger mx-1">Search</button>
     </form>
 </template>
 

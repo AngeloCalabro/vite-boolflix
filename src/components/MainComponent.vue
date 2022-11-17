@@ -36,6 +36,7 @@ export default {
 section {
     .my-overflow {
         overflow-x: auto;
+        overflow-y: hidden;
     }
 }
 </style>
