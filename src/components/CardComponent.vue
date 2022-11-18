@@ -8,7 +8,7 @@
                     </div>
             </div>
             <div class="flip-card-back rounded-1 p-3">
-                <div>{{ item.title || item.name }}</div>
+                <div class="fw-bold">{{ item.title || item.name }}</div>
                 <div>
                     <span v-for="n in 5" class="fa-star" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></span>
                 </div>
@@ -78,21 +78,24 @@ export default {
                 backface-visibility: hidden;
             }
         }
-            .flip-card-back{
-                transform: rotateY(180deg);
-                background-color: $black;
-                color: $red;
-                overflow: hidden;
-                .flag {
-                        img {
-                            width: 50px;
-                        }
-                }
-                .p-overview{
-                    overflow-y: auto;
-                    font-size: $fs-xs;
-                }
+        .flip-card-back{
+            height: 100%;
+            transform: rotateY(180deg);
+            background-color: $black;
+            color: $red;
+            overflow: hidden;
+            .flag {
+                    img {
+                        width: 50px;
+                    }
             }
+            .p-overview{
+                padding: 0.5rem;
+                height: 350px;
+                overflow-y: auto;
+                font-size: $fs-xs;
+            }
+        }
         &:hover .flip-card-inner{
             transform: rotateY(180deg);
         }

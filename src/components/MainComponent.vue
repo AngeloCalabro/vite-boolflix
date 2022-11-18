@@ -2,7 +2,7 @@
     <section class="container-fluid">
         <h2 v-if="(mediaType == 'movie' && store.movie.length > 0) || (store.tv.length > 0 && mediaType=='tv')">{{ title }}</h2>
         <h2 v-if="mediaType == 'popularMovie' || mediaType == 'popularTv'">{{ title }}</h2>
-        <div v-if="store.loading[mediaType]">
+        <div v-if="store.loading[mediaType]" class="fw-bold text-center">
             Loading...
         </div>
         <div class="d-flex my-overflow" v-if="!store.loading[mediaType]">
